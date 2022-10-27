@@ -1,0 +1,85 @@
+﻿<Window x:Class="Tidsrapporteringssystem_övning.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tidsrapporteringssystem_övning"
+        mc:Ignorable="d"
+        Title="Tidsrapportering" Height="450" Width="800">
+    <Grid>
+        <TabControl SelectedIndex="0">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Anställd</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <Label Name="textBoxLabel" Content="Arbetsuppgifter" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox Height="200" Width="150" Name="myTextBox" Grid.Column="1" Grid.Row="3" Grid.RowSpan="5">
+                    </TextBox>
+                    <DatePicker Name="myDatePicker" Grid.Column="3"  Grid.Row="3"/>
+                    <Label Content="Välj tid" Grid.Column ="3" Grid.Row="4" Margin="0,15,0,0"/>
+                    <ComboBox x:Name="timeCombo" Grid.Column="3" Grid.Row="5">
+                        <ComboBoxItem Content="08.00"/>
+                        <ComboBoxItem Content="09.00"/>
+                        <ComboBoxItem Content="10.00"/>
+                        <ComboBoxItem Content="11.00"/>
+                        <ComboBoxItem Content="12.00"/>
+                        <ComboBoxItem Content="13.00"/>
+                    </ComboBox>
+                    <Label Name="listBoxLabel" Content="Visa tidsrapporting" Grid.Column="4" Grid.Row="1" Margin="35,0,0,0"/>
+                    <ListBox Name="myListbox" Height="200" Width="400" Grid.Column="4" Grid.Row="3" Grid.RowSpan="5" Margin="35,0,0,0"/>
+                    <Button Content="Lägg till rapport" Grid.Column="3" Grid.Row="7" Margin="0,20,0,0" Click="Button_Click"/>
+                    <TextBox Name ="nameTextbox" Height="25" Grid.Column="3" Grid.Row="6" Margin="0,10,0,0" Text="Namn"/>
+                    <Button Name="Save" Content="Spara rapporter" Grid.Column="3" Grid.Row="8" Height="30" Margin="0,5,0,0" Click="Save_Click"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Manager">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <Label Name="listBoxLabel2" Content="Visa tidsrapporting" Grid.Column="4" Grid.Row="1" Margin="35,0,0,0"/>
+                    <ListBox Name="myListbox2" Height="200" Width="400" Grid.Column="4" Grid.Row="3" Grid.RowSpan="5" Margin="35,0,0,0"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
